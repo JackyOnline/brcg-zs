@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta charset="UTF-8">
+    <title>后台首页</title>
+    <link rel="stylesheet" type="text/css" href="css/q_index.css">
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <script type="text/javascript" src="js/xxk.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<body>
+<% include /FrontPage/q_header %>
+<div id="contentInfo_page">
+    <div style="width:1000px;height:25px;z-index:100;background-color:white;margin:15px auto 0;">
+        <!--<p style="color:#0c73cf;font-weight: 800;">首页 > 机关党建 > 主题活动 > 正文</p>-->
+        <input type="text" id="seq_no" value="<%=seq_no%>" hidden>
+    </div>
+    <div id='articleInfo' style="width:1000px;min-height:250px;background-color:#F9F9F9;margin:0 auto;padding: 20px">
+        <h1 id="title" style="text-align: center"></h1>
+        <br>
+        <p id="docInfo" style="font-size: 10px;text-align: center"></p>
+        <br>
+        <hr color="#DADADA" style="width:80%;margin:0 auto;">
+        <br>
+        <div id="content" style="width:800px;min-height:250px;line-height:2;margin:0 auto;">
+        </div>
+    </div>
+    <div style="width:1000px;min-height:100px;margin:0 auto;padding: 20px;margin-bottom: 130px;">
+        <h3 style="color: #56abee">相关阅读</h3>
+        <hr size="1" color="#e8e8e8"/>
+        <hr size="1" width="80px" color="#56abee" style="text-align: left; margin-top: -3px;">
+        <br>
+        <div id="relation">
+            <!--<p style="font-weight:bold">&emsp;■&emsp;&emsp;智创网络公司员工小陈</p>-->
+        </div>
+    </div>
+</div>
+<% include /FrontPage/q_footer %>
+</body>
+</html>
+<script type="text/javascript">
+
+    //    $(document).ready(function(){
+    //        $("#userName").blur(function(){
+    //            $(this).css("background-color","#ee2c2c");
+    //
+    //        });
+    //    });
+    // 导航点击的变化
+    $(function(){
+        $(".cont_z ul li").click(function(){
+            $(".cont_z ul li").each(function(){
+                $(".cont_z ul li").removeClass("cur_1");
+            })
+            $(this).addClass("cur_1");
+        })
+
+    })
+    // 收放导航
+    $(function(){
+        $(".xxgl").click(function(){
+            $(".xxgl_1").slideToggle(500);
+            $(".sf").toggleClass("sf_1")
+        })
+        $(".htgl").click(function(){
+            $(".htgl_1").slideToggle(500);
+            $(".sf2").toggleClass("sf_2")
+        })
+    })
+
+
+
+</script>
+<script src="js/FrontPage/contentInfo.js"></script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" type="text/css" href="css/h_index.css">
+    <link href="css/hDate.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <script type="text/javascript" src="js/hDate.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#commentForm").validate();
+        });
+    </script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<% include /header %>
+<div class="cont_y" id="keyWordList_page">
+    <div id='mb' style="width:62.5%;height:100%;opacity: 0.55;position: absolute;z-index: 1000;background-color:#E7E8EB" hidden></div>
+    <div class="dqwz">您当前的位置:后台管理 > 关键字管理</div>
+    <div class="sstj" div style="text-align:left;">
+        &nbsp;关键字：<input type="text" style="width: 20%;" id="key_wordList">
+        <td style="padding-top:30px;"><label id="UNLabel" for="male" ></label></td>
+        <span id="selectKW" style="text-align:center;margin: 0px 0px 0px 5px;">删除</span>
+        <span id="newKey" style="text-align:center;margin: 0px 0px 0px 5px;">新建</span>
+    </div>
+    <div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+            <tr>
+                <td align="center" style="width: 45%;background-color:#F4F5F9;padding-left:0px;font-weight: bold;">
+                    <div class="t" style="text-align: center;">关键字</div>
+                </td>
+                <td align="center" style=";background-color:#F4F5F9;padding-left:0px;font-weight: bold;width: 5%;">
+                    <div class="t" style="text-align: center;">操作</div>
+                </td>
+
+            </tr>
+            <tbody id="notice_tbody">
+            </tbody>
+        </table>
+    </div>
+    <div class="tzym">
+        <ul>
+            <li><a href="javascript:void(0);" class="notice_action4">最末页</a></li>
+            <li><a href="javascript:void(0);" class="notice_action3">下一页</a></li>
+            <li><a href="javascript:void(0);" class="notice_action2">上一页</a></li>
+            <li><a href="javascript:void(0);" class="notice_action1">第一页</a></li>
+            <li><span id="notice_num"></span>个记录，共 <span id="notice_page">1</span>  页，当前第 <span id="notice_page_show">1</span> 页 | </li>
+        </ul>
+        <div class="clr"></div>
+    </div>
+
+    <div id="qrcz" style="width: 40%;position: absolute;z-index: 1000;top: 50%;left: 38%;" hidden>
+        <div style="border: 1px solid #CCC; width: 70%; margin: 0 auto;background-color: #fff;" id="mas">
+            <div class="sstj" style="text-align:left;margin: 0 auto;background-color:#4EA5F2;height:40px;line-height:40px;color:#fff;">
+                <h5>&nbsp;您确定吗？</h5>
+            </div>
+            <div class="sstj" div style="text-align:left;margin:10px 0 10px 2%;">
+                <span id="yes" style="text-align:center;width: 20%;margin: 0px 10% 0px 23%;">确定</span>
+                <span id="no" style="text-align:center;width: 20%;margin: 0px 0px 0px 5px;">取消</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="kw" style="width: 50%;position: absolute;z-index: 1000;top: 40%;left: 30%;" hidden>
+        <div style="border: 1px solid #CCC; width: 70%; margin: 0 auto;background-color: #fff;" id="mas">
+            <div class="sstj" style="text-align:left;margin: 0 auto;background-color:#4EA5F2;height:40px;line-height:40px;color:#fff;">
+                <label>&nbsp;关键字添加</label>
+            </div>
+            <div class="sstj" div style="text-align:left;margin-left: 3%;">
+                <label>关键字：</label>
+                <input id="nkw" type="text" style="width: 80%"/>
+            </div>
+            <div class="sstj" div style="text-align:left;margin:10px 0 10px 2%;">
+                <span id="reply" style="text-align:center;width: 20%;margin: 0px 10% 0px 23%;">添加</span>
+                <span id="return" style="text-align:center;width: 20%;margin: 0px 0px 0px 5px;">取消</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<% include /footer %>
+</body>
+</html>
+<script type="text/javascript">
+    // 导航点击的变化
+    $(function(){
+        $(".cont_z ul li").click(function(){
+            $(".cont_z ul li").each(function(){
+                $(".cont_z ul li").removeClass("cur");
+            })
+            $(this).addClass("cur");
+        })
+
+    })
+    // 收放导航
+    $(function(){
+        $(".xxgl").click(function(){
+            $(".xxgl_1").slideToggle(500);
+            $(".sf").toggleClass("sf_1")
+        })
+        $(".htgl").click(function(){
+            $(".htgl_1").slideToggle(500);
+            $(".sf2").toggleClass("sf_2")
+        })
+    })
+</script>
+<!--私有js-->
+<script src="js/hsajj/keyWordList.js"></script>

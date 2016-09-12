@@ -1,0 +1,83 @@
+/* CSS Document */
+*{margin:0px;padding:0px;}
+a{text-decoration:none;}
+a:hover{color:#FF0000;cursor: pointer;}
+ul,ol{list-style:none;}
+.hei{color:#333333;}
+.hui{color:#666666;}
+.hui a{color:#666666;}
+img{vertical-align:middle;}
+.qc{clear:both; line-height:0px;}
+.dib{display:inline-block;}
+
+
+/*字体*/
+.fon{font-family:"微软雅黑"}
+.fz{font-size:16px;}
+.fz2{font-size:25px}
+/*头部*/
+.header{width:100%;height:auto;margin:0 auto;background-color:#252E33;}
+.logo{width:300px;height:60px;background-color:#159F85;line-height:60px;color:#fff;}
+.header div{display:inline-block;}
+.header div div{color:#fff}
+.hygl{color:#fff;position:relative;left:15%;}
+.tubiao{text-align:center;float:right;}
+.tubiao div{font-size:30px;width:90px;height:63px;border:1px solid #ccc;margin:-2px !important;}
+.tubiao div a{color:#fff;}
+.tubiao div p{font-size:14px;}
+.yd{top: 17px;position: relative;right: 42px;}
+
+/*内容左*/
+.nr{width:100%;height:auto;margin:0 auto;background-color:#F5F8FA;}
+.aside{background-color:#252E33;width:300px;color:#B1BEC6;float:left;}
+.aside ul li{height:50px;line-height:50px;color:#B1BEC6;}
+.aside ul li:hover{background-color: #2C3B42;}
+.aside ul li a,.aside ul li p{color:#B1BEC6;display:block;text-indent:50px;}
+.aside ul li a:hover{text-decoration:none;}
+.xt1,.zh1,.cw1{display:none;}
+.xt1 a,.zh1 a,.cw1 a,.gl1 a{text-indent:75px !important;}
+
+
+
+/*内容右*/
+.article{float:left;width:77.6%;background-color:#F5F8FA;}
+.article_1{width:93%;margin:0 auto;margin-top:40px;}
+.article_1_1{width:465px;height:85px;background-color:#0349A1;font-size:20px;color:#fff;border-radius:5px;float:left;}
+.article_1_1 a{color:#fff}
+.article_1_1 a:hover{text-decoration:none;color:#fff;}
+.article_1_1 span{text-indent:50px;}
+.article_1_1 div{position:relative;top:10px;left:20px;margin-right:20px;}
+
+.article_1_2{width:465px;height:85px;background-color:#FF6100;font-size:20px;color:#fff;border-radius:5px;float:right;}
+.article_1_2 a{color:#fff}
+.article_1_2 a:hover{text-decoration:none;color:#fff;}
+.article_1_2 span{text-indent:50px;}
+.article_1_2 div{position:relative;top:10px;left:20px;margin-right:20px;}
+
+
+.article_1_3,.article_1_4,.article_1_5,.article_1_6{border:1px solid #ccc;margin-top:40px;}
+.article_1_7{margin-top:40px;text-align:right;}
+
+
+/*以上为首页*/
+
+/*签到*/
+.qd{widows:100%;height:300px;border:1px solid #ccc;}
+.qd1{widows:100%;height:40px;border-bottom:1px solid #ccc;font-size:20px;background-color:#F8F8F8;}
+.qd2{text-align:center;line-height:30px;}
+
+
+/*注册*/
+.xx{border:1px dashed #ccc;width:300px;}
+
+
+/*我的钱包*/
+.qb{width:33%;height:80px;text-align:center;font-size:16px;margin-top:40px;}
+
+
+
+/*信息*/
+.xx1{width:100%;height:50px;border:1px solid #ccc;background-color:#fff;}
+.xx1 ul li{float:left;line-height:48px;width:200px;text-align:center;border:1px solid #ccc;}
+.xx1 ul li a{display:block;color:#000;}
+.xx1 ul li a:hover{background-color:#0349A1;color:#fff;}

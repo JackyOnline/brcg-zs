@@ -1,0 +1,8 @@
+#! /bin/sh
+
+
+#sudo git pull 
+docker rm -f fig-web
+root_path=${PWD}
+echo $root_path
+docker run -d   -v $root_path/server:/opt/app/server -w /opt/app/server -p 3005:3000     --name fzr-web google/nodejs

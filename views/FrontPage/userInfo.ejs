@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta charset="UTF-8">
+    <title>后台首页</title>
+    <link rel="stylesheet" type="text/css" href="css/q_index.css">
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <script type="text/javascript" src="js/xxk.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<body>
+<% include /FrontPage/q_header %>
+<div class="article" id="yhxx_page" >
+    <div class="cont_1">
+        <div class="cont_y">
+            <div style="margin-bottom:20px;">
+                <table style="width:100%;text-align:left;margin:0px 0px 0px 100px" class="xxbg">
+                    <th colspan="3" style="border-bottom:2px solid #ccc;padding-bottom:10px;color:#7cb6e8;">个人信息</th>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;padding-top:30px;">账号：</td>
+                        <td style="padding-top:30px;"><input type="text" id="userName" class="jdbg"/></td>
+                        <td style="padding-top:30px;"><label id="UNLabel" for="male" ></label></td>
+                        <td rowspan="6" style="position: relative;width: 22%;" class="bgtx"><div class="sctx"> <img src="images/dx.png"></div><span>上传头像</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">密码：</td>
+                        <td><input maxlength="16" type="password" id="password" class="jdbg"/></td>
+                        <td><label id="PWLabel" for="male" ></label></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">密码确认：</td>
+                        <td><input maxlength="16" type="password" id="passwordC" class="jdbg"/></td>
+                        <td><label id="PWCLabel"></label></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">真实姓名：</td>
+                        <td><input type="text" id="realName" class="jdbg"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">昵称：</td>
+                        <td><input type="text" id="nickName" class="jdbg"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;" >性别：</td>
+                        <td style="color:black"><input type="radio" name="sex" value="1">男 <input type="radio" name="sex" value="2">女</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">出生日期：</td>
+                        <td>
+                            <select id="myYear" style="width: 23.6%;"></select></select><select id="myYear_1" style="width: 23.6%;"></select><select id="myYear_2" style="width: 23.6%;"></select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin-bottom:20px;" id="RelatedaAccount">
+                <table style="width:100%;text-align:left;margin:0px 0px 0px 100px" class="xxbg" id="RelatedaAccount" hidden>
+                    <th colspan="3" style="border-bottom:2px solid #ccc;padding-bottom:10px;color:#7cb6e8;">关联账号</th>
+                    <tr>
+                        <td style="padding-left:135px;font-weight:bold;padding-top:30px;" colspan="2">海曙区公共安全综合监管平台</td>
+                        <td style="position: relative;width: 22%;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">账 号：</td>
+                        <td><input type="text" id="account2" class="jdbg"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">密 码：</td>
+                        <td><input type="text" id="password2" class="jdbg"/></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:135px;font-weight:bold;" colspan="2">宁波市安全生产企业服务平台</td>
+                        <td style="position: relative;width: 22%;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">账 号：</td>
+                        <td><input type="text" id="account3" class="jdbg"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">密 码：</td>
+                        <td><input type="text" id="password3" class="jdbg"/></td>
+                    </tr>
+                    <td style="padding-left:135px;font-weight:bold;" colspan="2">宁波市安全生产综合监管平台</td>
+                    <td style="position: relative;width: 22%;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">账 号：</td>
+                        <td><input type="text" id="account4" class="jdbg"/></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;font-weight:bold;">密 码：</td>
+                        <td><input type="text" id="password4" class="jdbg"/></td>
+                    </tr>
+                </table>
+            </div>
+            <tr>
+                <td style="text-align: right;font-weight:bold;margin:0% 0% 0% 50%"><span class="bcan" id="insert_button" style="margin:0% 0% 0% 50%">保存</span></td>
+                <td></td>
+            </tr>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <div class="con_1_4">
+        <div class="con_1_4_1">
+    		  <span><img src="images/41.png">友情链接<div></div><a>国家安监总局</a> <a>浙江省安监局</a> <a>中国安全生产网</a>
+    		  <a>宁波市安全生产协会</a></span>
+            <select>
+                <option>--县市区安监机构--</option>
+            </select>
+            <select>
+                <option>--全省地市安监机构--</option>
+            </select>
+            <select>
+                <option>--全国省市安监机构--</option>
+            </select>
+        </div>
+    </div>
+</div>
+<% include /FrontPage/q_footer %>
+</body>
+</html>
+<script type="text/javascript">
+
+//    $(document).ready(function(){
+//        $("#userName").blur(function(){
+//            $(this).css("background-color","#ee2c2c");
+//
+//        });
+//    });
+    // 导航点击的变化
+    $(function(){
+        $(".cont_z ul li").click(function(){
+            $(".cont_z ul li").each(function(){
+                $(".cont_z ul li").removeClass("cur_1");
+            })
+            $(this).addClass("cur_1");
+        })
+
+    })
+    // 收放导航
+    $(function(){
+        $(".xxgl").click(function(){
+            $(".xxgl_1").slideToggle(500);
+            $(".sf").toggleClass("sf_1")
+        })
+        $(".htgl").click(function(){
+            $(".htgl_1").slideToggle(500);
+            $(".sf2").toggleClass("sf_2")
+        })
+    })
+    // 出生年设置
+    window.onload=function(){
+        //设置年份的选择
+        var myDate= new Date();
+        var startYear=myDate.getFullYear()-100;//起始年份
+        var endYear=myDate.getFullYear()+50;//结束年份
+        var obj=document.getElementById('myYear');
+        for (var i=startYear;i<=endYear;i++)
+        {
+            obj.options.add(new Option(i+"年",i+"年"));
+        }
+        obj.options[obj.options.length-51].selected=1;
+    };
+    // 出生月设置
+    for(var i=1 ; i<13;i++){
+        var newOption  = document.createElement("option");
+        newOption.text=i+"月";
+        newOption.value=i;
+        document.getElementById("myYear_1").add(newOption);
+    }
+    // 出生日设置
+    for(var i=1 ; i<32;i++){
+        var newOption  = document.createElement("option");
+        newOption.text=i+"日";
+        newOption.value=i;
+        document.getElementById("myYear_2").add(newOption);
+    }
+</script>
+<script src="js/FrontPage/userInfo.js"></script>

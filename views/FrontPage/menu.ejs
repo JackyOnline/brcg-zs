@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta charset="UTF-8">
+    <title>海曙安全生产监督管理局</title>
+    <link rel="stylesheet" type="text/css" href="css/q_index.css">
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <script type="text/javascript" src="js/xxk.js"></script>
+    <script type="text/javascript" src="http://pv.sohu.com/cityjson"></script>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<body>
+<% include /FrontPage/q_header %>
+<div class="article">
+    <input type="text" id="flMenu" value="<%=flMenu%>" hidden/>
+    <input type="text" id="slMenu" value="1" hidden/>
+    <input type="text" id="position" value="1" hidden/>
+    <div class="cont_1">
+        <div class="cont_z" id="tab1">
+            <ul id="slMenu_list" style="font-size: 14px">
+                <%var n = 0;%>
+                <%for(var i=0;i<menus.length;i++){%>
+                <%if(menus[i].type == '菜单'){%>
+                <%n++;%>
+                <li style="padding:0 5px;font-weight:bold;background-color:#f8f8f8;color: #4a4949!important;" class="xxg<%=n%>">
+                    <img src="images/1.png" class="tb"><%=menus[i].menu_name%>
+                </li>
+                <%}else if(menus[i].tlMenu && menus[i].tlMenu==1){%>
+                <li style="display: none" class="xxgl_<%=n%>" value="<%=menus[i].menu_order%>" data-type="<%=menus[i].type%>">---><%=menus[i].menu_name%></li>
+                <%} else {%>
+                <li class="" value="<%=menus[i].menu_order%>" data-type="<%=menus[i].type%>"><%=menus[i].menu_name%></li>
+                <%}%>
+                <%}%>
+                <!--<li style="padding:0 5px;font-weight:bold;background-color:#f8f8f8;color: #4a4949!important;" class="xxgl">-->
+                <!--<img src="images/2.png" class="tb">信息管理<span class="sf"></span>-->
+                <!--</li>-->
+                <!--<li class="xxgl_1"><a href="/docList?flMenu=1">政府信息公开</a></li>-->
+
+                <!--<li style="padding:0 5px;font-weight:bold;background-color:#f8f8f8;color: #4a4949!important;" class="htgl">-->
+                <!--<img src="images/1.png" class="tb">后台管理<span class="sf2"></span>-->
+                <!--</li>-->
+                <!--<li class="htgl_1"><a href="/userList">用户管理</a></li>-->
+            </ul>
+
+        </div>
+        <div id="con_list">
+
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
+<% include /FrontPage/q_footer %>
+</body>
+</html>
+<script type="text/javascript">
+    // 导航点击的变化
+    $(function(){
+        $(".cont_z ul li").click(function(){
+            $(".cont_z ul li").each(function(){
+                $(".cont_z ul li").removeClass("cur_1");
+            })
+            $(this).addClass("cur_1");
+        })
+
+    })
+    // 收放导航
+    $(function(){
+        $(".xxg1").click(function(){
+            $(".xxgl_1").slideToggle(500);
+            $(".sf1").toggleClass("sf_1")
+        })
+        $(".xxg2").click(function(){
+            $(".xxgl_2").slideToggle(500);
+            $(".sf2").toggleClass("sf_2")
+        })
+        $(".xxg3").click(function(){
+            $(".xxgl_3").slideToggle(500);
+            $(".sf3").toggleClass("sf_3")
+        })
+        $(".xxg4").click(function(){
+            $(".xxgl_4").slideToggle(500);
+            $(".sf4").toggleClass("sf_4")
+        })
+        $(".xxg5").click(function(){
+            $(".xxgl_5").slideToggle(500);
+            $(".sf5").toggleClass("sf_5")
+        })
+
+
+    })
+
+
+    var $p_id = $("#contentList_page");
+    $.ajaxSetup({cache:false});
+    var notice_num = 0;
+    var notice_page = 0;
+    var notice_page_show = 1;
+    var recordStart = 0;
+    var type = 1;
+    var hd;
+    var hd_i = 1;
+
+    //创建一次二级菜单的点击事件
+    $("#tab1 ul").each(function(){
+        //取出ul下的第一个li
+        var li= $(this).children().first();
+        type = li.attr("data-type");
+        $("#position").val(li.html())
+        init(recordStart);
+    });
+
+    //切换二级菜单
+    $("#tab1").on("click","li",function(){
+        $("#tab1 ul li").each(function(){
+            $("ul#slMenu_list li").removeClass("cur_1");
+        });
+        $(this).addClass("cur_1");
+        slMenu = $(this).val();
+        $("#slMenu").val(slMenu);
+        $("#position").val($(this).html());
+        type = $(this).attr("data-type");
+        init(recordStart);
+    });
+
+    //填充表格方法
+    function init(recordStart){
+        if(type == '文章'){
+            $("#con_list").empty();
+            $.get("/contentList",function(data){
+                $("#con_list").html(data);
+            });
+        }else if(type == '菜单'){
+            $.ajax({
+                type: "get",
+                url: "/document/list?recordStart="+recordStart,
+                dataType: "json",
+                data: docms,
+                success: function (data) {
+
+                },
+                error: function (data) {
+                    alert("系统错误");
+                }
+            });
+        }else if(type == '信箱'){
+            $("#con_list").empty();
+            $.get("/interaction?slMenu="+slMenu,function(data){
+                $("#con_list").html(data);
+            });
+        }else if(type == '调查'){
+            $("#con_list").empty();
+            $.get("/investigateList",function(data){
+                $("#con_list").html(data);
+            });
+        }else if(type == '在线学习'){
+            location.reload();
+            window.open("/onlineLearning");
+        }
+
+    }
+
+
+
+</script>
+
+<!--私有js-->
+<!--
+<script src="js/FrontPage/menu.js"></script>-->

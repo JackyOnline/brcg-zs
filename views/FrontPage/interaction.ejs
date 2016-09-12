@@ -1,0 +1,121 @@
+<div class="cont_y" id="interaction_page">
+    <div class="menudiv">
+        <div id="con_one_1">
+            <div class="con_1_1" id="hd">
+                我要写信<span>您现在所在的位置：首页 >> 我要写信</span>
+            </div>
+
+            <div class="con_1_2" style="height:500px;padding: 20px;line-height: 2;border-bottom:0;white-space:nowrap;">
+                <input type="text" value="<%=slMenu%>" id="slMenu" hidden>
+                <input type="radio" name="type" value="1" style="margin-left: 18%">局长信箱
+                <input type="radio" name="type" value="2" style="margin-left: 18%">举报投诉
+                <input type="radio" name="type" value="3" style="margin-left: 18%">网上咨询
+                <br>
+                <form name="frm_mailbox" action="/cn/hudong/mailbox.jsp" method="post" onsubmit="return isValid()">
+                    <input type="hidden" id="unit_id" name="unit_id" value="21">
+                    <input type="hidden" id="business_type" name="business_type" value="5">
+                    <input type="hidden" id="category" name="category" value="4">
+                    <table class="form" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td class="label" style="width: 10%">标题：</td>
+                            <td><input type="text" id="subject" name="subject"size="30" /></td>
+                        </tr>
+                        <tr>
+                            <td class="label">内容：</td>
+                            <td><textarea id="content" na
+me="content" style="overflow:hidden;resize: none;width: 96%;height: 80px"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="label">是否公开：</td>
+                            <td><input type="radio" name="is_public" value="1" checked/> 是
+                                <input type="radio" name="is_public" value="0"/> 否
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">匿名:</td>
+                            <td><input type="checkbox" name="anonymous" value="1" checked/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <div class="ssk">
+                                    <span id="reply"  style="top:-50px;left: -25px;">提交</span>
+                                    <hr style="margin:-45px 15px -5px -15px;">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </form>
+                <div class="sstj" div style="text-align:left;margin: 30px 0; border-style:solid; width: 97%;height: 200px; border-width:1px; border-color:#000;">
+                    <table style="width: 100%;margin: 0 auto;">
+                        <tr>
+                            <td class="label" style="width: 85%;height:45px;background-color: #FAFAFA">
+                                <label style="margin: 15px">标题：</label>
+                                <input type="text" style="width: inherit" id="title">
+                            </td>
+
+                            <td class="label" style="width: 8%">
+                                <div class="ssk">
+                                    <span id="select"  style="width: 27px;height: 12px;margin: 0 auto;text-align: center;top: 0px;line-height: 1;">搜索</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tbody id="notice_tbody">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="con_1_3" style="margin: -35px 0 0 0;">
+                <ul>
+                    <li><a href="javascript:void(0);" class="notice_action4">最末页</a></li>
+                    <li><a href="javascript:void(0);" class="notice_action3">下一页</a></li>
+                    <li><a href="javascript:void(0);" class="notice_action2">上一页</a></li>
+                    <li><a href="javascript:void(0);" class="notice_action1">第一页</a></li>
+                    <li><span id="notice_num"></span>个记录，共 <span id="notice_page">1</span>  页，当前第 <span id="notice_page_show">1</span> 页 |
+                </ul>
+            </div>
+        </div>
+        <div id="con_one_2" style="display:none;">
+        </div>
+
+        <div id="con_one_3" style="display:none;">
+        </div>
+        <div id="con_one_4" style="display:none;">tab标签</div>
+        <div id="con_one_5" style="display:none;">tab标签</div>
+    </div>
+</div>
+<div class="cont_y" id="interaction_page_xq">
+    <div class="menudiv">
+        <div>
+            <div class="con_1_1" id="hd">
+                历史信件<span>您现在所在的位置：首页 >> 历史信件 >> 内容</span>
+            </div>
+            <div class="con_1_2" style="text-align:center;border-bottom: none;margin: 20px 0 0 0;">
+                <h3 id="xq_title">标题：哈哈哈哈哈哈</h3>
+
+            </div>
+            <div class="con_1_3" div style="text-align:left;">
+                <label id="xq_questioner">&nbsp;发问人：宁波小陈</label>
+                <label id="xq_launch_time" style="float: right;">发问时间：2016-08-25</label>
+                <br><br>
+                <textarea id="xq_content" style="width: 96%; height: 100px;resize:none; padding: 2%;" disabled>我想问个问题</textarea>
+            </div>
+            <div class="con_1_3" div style="text-align:left;margin-top: -63px;">
+                <label id="xq_handler">&nbsp;处理人：超级管理员</label>
+                <label id="xq_processing_time" style="float: right;">回复时间：2016-08-25</label>
+                <br><br>
+                <textarea id="xq_reply" style="width: 96%; height: 100px;resize:none; padding: 2%;" disabled>请问你想问什么呢？</textarea>
+                <div class="ssk" style="margin: 10px auto;text-align: center;">
+                    <span id="return0"  style="width: 27px;height: 12px;margin: 0 auto;text-align: center;top: 0px;line-height: 1;">反回</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--私有js-->
+<script src="js/FrontPage/interaction.js"></script>

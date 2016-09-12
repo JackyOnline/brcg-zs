@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta charset="UTF-8">
+    <title>文档管理</title>
+    <link rel="stylesheet" type="text/css" href="css/h_index.css">
+    <link href="css/hDate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="trumbowyg/design/css/trumbowyg.css">
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <script type="text/javascript" src="js/hDate.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#commentForm").validate();
+        });
+    </script>
+    <style>
+        .error{
+            color:red;
+        }
+        html, body {
+            font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<% include /header %>
+<div class="cont_y" id="docManager_page">
+    <input id="flMenu" type='text' hidden value=<%=flMenu%> />
+    <input id="seq_no" type='text' hidden value=<%=seq_no%> />
+    <div class="dqwz_1">
+        <div class="dqwz_2">
+            标题：<input id="title" type="text" value=""/>
+        </div>
+    </div>
+    <div class="fsnr">
+        <div style="width:95%;">
+            <div class="fsr">
+                &nbsp;&nbsp;&nbsp;作者：<input id="publishJg" type="text" value="" style=" width:16%"/>
+                文章目录：<select id="slMenu" style=" width:16%"></select>
+                关键字：<select id="keyword" style=" width:16%"></select>
+                <span style="float:right;"><label id="pubDate"></label></span>
+            </div>
+            <div id="customized-buttonpane" class="editor">
+
+            </div>
+
+        </div>
+    </div>
+    <div class="dmt">
+        <ul>
+            <li>多媒体</li>
+            <li><img src="images/11.png">图片</li>
+            <li><img src="images/12.png">视频</li>
+            <li><img src="images/13.png">音乐</li>
+            <li><img src="images/14.png">音频</li>
+            <li style="border-bottom:1px solid #ccc;"><img src="images/15.png">投票</li>
+        </ul>
+    </div>
+    <div class="clr"></div>
+    <div class="cont_y_d">
+        <span id="save">保存</span><span id="savePo" >保存并发布</span>
+    </div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<% include /footer %>
+</body>
+</html>
+
+<script type="text/javascript">
+    // 导航点击的变化
+    $(function(){
+        $(".cont_z ul li").click(function(){
+            $(".cont_z ul li").each(function(){
+                $(".cont_z ul li").removeClass("cur");
+            })
+            $(this).addClass("cur");
+        })
+
+    })
+    // 收放导航
+    $(function(){
+        $(".xxgl").click(function(){
+            $(".xxgl_1").slideToggle(500);
+            $(".sf").toggleClass("sf_1")
+        })
+        $(".htgl").click(function(){
+            $(".htgl_1").slideToggle(500);
+            $(".sf2").toggleClass("sf_2")
+        })
+    })
+</script>
+<!--富文本-->
+<script src="trumbowyg/trumbowyg.js"></script>
+<script src="trumbowyg/langs/fr.js"></script>
+<script src="trumbowyg/plugins/upload/trumbowyg.upload.js"></script>
+<script src="trumbowyg/plugins/base64/trumbowyg.base64.js"></script>
+<script>
+    /** Default editor configuration **/
+    $('#simple-editor').trumbowyg();
+
+
+
+    /********************************************************
+     * Customized button pane + buttons groups + dropdowns
+     * Use upload plugin
+     *******************************************************/
+
+    /*
+     * Add your own groups of button
+     */
+    $.trumbowyg.btnsGrps.test = ['bold', 'link'];
+
+    /* Add new words for customs btnsDef just below */
+    $.extend(true, $.trumbowyg.langs, {
+        fr: {
+            align: 'Alignement',
+            image: 'Image'
+        }
+    });
+    $('#customized-buttonpane').trumbowyg({
+        lang: 'fr',
+        closable: true,
+        fixedBtnPane: true,
+        btnsDef: {
+            // Customizables dropdowns
+            align: {
+                dropdown: ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+                ico: 'justifyLeft'
+            },
+            image: {
+                dropdown: ['insertImage', 'upload', 'base64'],
+                ico: 'insertImage'
+            }
+        },
+        btns: ['viewHTML',
+            '|', 'formatting',
+            '|', 'btnGrp-test',
+            '|', 'align',
+            '|', 'btnGrp-lists',
+            '|', 'image']
+    });
+
+
+
+    /** Simple customization with current options **/
+    $('#form-content').trumbowyg({
+        lang: 'fr',
+        closable: true,
+        mobile: true,
+        fixedBtnPane: true,
+        fixedFullWidth: true,
+        semantic: true,
+        resetCss: true,
+        autoAjustHeight: true,
+        autogrow: true
+    });
+
+
+
+
+    $('.editor').on('dblclick', function(e){
+        $(this).trumbowyg({
+            lang: 'fr',
+            closable: true,
+            fixedBtnPane: true
+        });
+    });
+</script>
+
+<!--私有js-->
+<script src="js/hsajj/docManager.js"></script>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" type="text/css" href="css/h_index.css">
+    <link href="css/hDate.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <script type="text/javascript" src="js/hDate.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#commentForm").validate();
+        });
+    </script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<% include /header %>
+<div class="cont_y" id="userList_page">
+    <div id='mb' style="width:62.5%;height:100%;opacity: 0.55;position: absolute;z-index: 1000;background-color:#E7E8EB" hidden>
+    </div>
+    <input type="hidden" value="">
+    <div class="dqwz">您当前的位置:后台首页 > 用户管理</div>
+    <div class="sstj" style="text-align:left;">
+        用户名：<input type="text" style="width: 12%" id="userName">
+        昵称：<input type="text" style="width: 24%" id="nickName">
+        注册时间：<input id="regTimeS" style="width: 10%" id="Text1" onClick="calendar.show({ id: this })" type="text" /> -
+        <input id="regTimeE" style="width: 10%" id="Text1" onClick="calendar.show({ id: this })" type="text" />
+        <br>
+        真实姓名：<input type="text" style="width: 10%" id="realName">
+        手机号：<input type="text"style="width: 13%" id="mobile">
+        账户状态：<select class="sstj" id="status" style="margin: 10px 0px 0px 0px;width: 10%;height: 32px;border-radius: 5px;">
+            <option value="0">请选择</option>
+            <option value="1">正常</option>
+            <option value="2">弃用</option>
+            <option value="3">删除</option>
+        </select>
+        账号类型：<select class="sstj" id="acwsType" style="margin: 10px 0px 0px 0px;width: 12%;height: 32px;border-radius: 5px;">
+            <option value="0">请选择</option>
+            <option value="1">普通用户</option>
+            <option value="2">内部用户</option>
+        </select>
+        <span id="selectUser" style="text-align:center;width: 7%;margin: 0px 0px 0px 5px;">搜索</span>
+    </div>
+    <div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
+            <tr>
+                <th width="15%">
+                    <!--<span style="width:44px;display: inline-block;">-->
+                    </span>用户名</th>
+                <th width="15%">手机号</th>
+                <th width="10%">昵称</th>
+                <th width="10%">性别</th>
+                <th width="10%">真实姓名</th>
+                <th width="10%">注册时间</th>
+                <th width="10%">账户状态</th>
+                <th width="10%">账号类型</th>
+                <th width="10%">操作</th>
+            </tr>
+            <tbody id="notice_tbody">
+            </tbody>
+        </table>
+    </div>
+    <div class="tzym">
+        <ul>
+            <li><a href="javascript:void(0);" class="notice_action4">最末页</a></li>
+            <li><a href="javascript:void(0);" class="notice_action3">下一页</a></li>
+            <li><a href="javascript:void(0);" class="notice_action2">上一页</a></li>
+            <li><a href="javascript:void(0);" class="notice_action1">第一页</a></li>
+            <li><span id="notice_num"></span>个记录，共 <span id="notice_page">1</span>  页，当前第 <span id="notice_page_show">1</span> 页 | </li>
+        </ul>
+        <div class="clr"></div>
+    </div>
+
+    <div id="ul" style="width: 50%;position: absolute;z-index: 1000;top: 30%;left: 30%;" hidden>
+        <div style="border: 1px solid #CCC; width: 70%; margin: 0 auto;background-color: #fff;" id="mas">
+            <div class="sstj" style="text-align:left;margin: 0 auto;background-color:#4EA5F2;height:40px;line-height:40px;color:#fff;">
+                <label>&nbsp;用户信息详情</label>
+            </div>
+            <div class="sstj" div style="text-align:left;margin-left: 3%;">
+                <form id="xq_form" >
+                    <label>&nbsp用户名：</label>
+                    <input id="xq_userName" type="text" style="width: 29%"/>
+                    <label>&nbsp昵&nbsp称：</label>
+                    <input id="xq_nickName" type="text" style="width: 29%"/><br><br>
+                    <label>真实姓名：</label>
+                    <input id="xq_realName" type="text" style="width: 29%"/>
+                    <label>&nbsp手机号：</label>
+                    <input id="xq_mobile" type="text" style="width: 29%"/><br><br>
+                    <label>&nbsp年&nbsp龄：</label>
+                    <input id="xq_age" type="text" style="width: 29%"/>
+                    <label>&nbsp性&nbsp别：</label>
+                    <input id="xq_sex" type="text" style="width: 29%"/><br><br>
+                    <label>帐号类型：</label>
+                    <input id="xq_acwsType" type="text" style="width: 29%"/>
+                    <label>注册时间：</label>
+                    <input id="xq_regTime" type="text" style="width: 29%"/><br><br>
+                    <label>&nbsp注册IP：</label>
+                    <input id="xq_regIp" type="text" style="width: 29%"/>
+                    <label>帐号状态：</label>
+                    <input id="xq_status" type="text" style="width: 29%"/><br><br>
+                </form>
+            </div>
+            <div class="sstj" div style="text-align:left;margin:10px 0 10px 2%;">
+                <span id="inside" style="text-align:center;width: 30%;margin: 0 0 0 6%;">设为内部帐号</span>
+                <span id="outside" style="text-align:center;width: 30%;margin: 0 0 0 5px;">关闭内部权限</span>
+                <span id="return" style="text-align:center;width: 20%;margin: 0 0 0 5px;">取消</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<% include /footer %>
+</body>
+</html>
+<script type="text/javascript">
+    // 导航点击的变化
+    $(function(){
+        $(".cont_z ul li").click(function(){
+            $(".cont_z ul li").each(function(){
+                $(".cont_z ul li").removeClass("cur");
+            })
+            $(this).addClass("cur");
+        })
+
+    })
+    // 收放导航
+    $(function(){
+        $(".xxgl").click(function(){
+            $(".xxgl_1").slideToggle(500);
+            $(".sf").toggleClass("sf_1")
+        })
+        $(".htgl").click(function(){
+            $(".htgl_1").slideToggle(500);
+            $(".sf2").toggleClass("sf_2")
+        })
+    })
+</script>
+<!--私有js-->
+<script src="js/hsajj/userList.js"></script>

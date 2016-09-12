@@ -58,28 +58,28 @@ module.exports = function (app) {
 
     });
     //用户信息
-    router.get('/userInfo', function (req, res){
-        res.render('FrontPage/userInfo',{code:0,text:""});
+    router.get('/bzzx', function (req, res){
+        res.render('FrontPage/bzzx',{code:0,text:""});
     });
     //在线考试
-    router.get('/OnlineTest', function (req, res){
-        res.render('FrontPage/OnlineTest',{code:0,text:""});
+    router.get('/gsal', function (req, res){
+        res.render('FrontPage/gsal',{code:0,text:""});
     });
     //考试系统
-    router.get('/onlineLearning', function (req, res){
-        res.render('FrontPage/onlineLearning',{code:0,text:""});
+    router.get('/gswh', function (req, res){
+        res.render('FrontPage/gswh',{code:0,text:""});
     });
     //内容列表
-    router.get('/contentList', function (req, res){
-        res.render('FrontPage/contentList',{flMenu:req.query.flMenu});
+    router.get('/gywn', function (req, res){
+        res.render('FrontPage/gywn',{flMenu:req.query.flMenu});
     });
     //详细内容
-    router.get('/contentInfo', function (req, res){
-        res.render('FrontPage/contentInfo',{seq_no:req.query.seq_no});
+    router.get('/index', function (req, res){
+        res.render('FrontPage/index',{seq_no:req.query.seq_no});
     });
     //调查列表
-    router.get('/investigateList', function (req, res){
-        res.render('FrontPage/investigateList',{code:0,text:""});
+    router.get('/lxwm', function (req, res){
+        res.render('FrontPage/lxwm',{code:0,text:""});
     });
     //调查内容
     router.get('/investigateInfo', function (req, res){

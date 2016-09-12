@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/controllers/Jump.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/FrontPage/interaction.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/hsajj/docList.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/hsajj/keyWordList.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/hsajj/questionList.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/hsajj/userList.js" charset="UTF-8" />
+  </component>
+</project>

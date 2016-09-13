@@ -57,33 +57,33 @@ module.exports = function (app) {
         });
 
     });
-    //用户信息
-    router.get('/bzzx', function (req, res){
-        res.render('FrontPage/bzzx',{code:0,text:""});
-    });
-    //在线考试
-    router.get('/gsal', function (req, res){
-        res.render('FrontPage/gsal',{code:0,text:""});
-    });
-    //考试系统
-    router.get('/gswh', function (req, res){
-        res.render('FrontPage/gswh',{code:0,text:""});
-    });
-    //内容列表
-    router.get('/gywn', function (req, res){
-        res.render('FrontPage/gywn',{flMenu:req.query.flMenu});
-    });
-    //详细内容
+    //主页
     router.get('/index', function (req, res){
         res.render('FrontPage/index',{seq_no:req.query.seq_no});
     });
-    //调查列表
-    router.get('/lxwm', function (req, res){
-        res.render('FrontPage/lxwm',{code:0,text:""});
+    //帮助中心
+    router.get('/bzzx', function (req, res){
+        res.render('FrontPage/bzzx',{code:0,text:""});
     });
-    //调查内容
-    router.get('/investigateInfo', function (req, res){
-        res.render('FrontPage/investigateInfo',{seq_no:req.query.seq_no});
+    //公司案例
+    router.get('/gsal', function (req, res){
+        res.render('FrontPage/gsal',{code:0,text:""});
+    });
+    //公司文化
+    router.get('/gswh', function (req, res){
+        res.render('FrontPage/gswh',{code:0,text:""});
+    });
+    //公司简介
+    router.get('/gywn', function (req, res){
+        res.render('FrontPage/gywn',{flMenu:req.query.flMenu});
+    });
+    //联系我们
+    router.get('/lxwm', function (req, res){
+        res.render('FrontPage/lxwm',{flMenu:req.query.flMenu});
+    });
+    //联系我们
+    router.get('/zxly', function (req, res){
+        res.render('FrontPage/zxly',{flMenu:req.query.flMenu});
     });
     //互动交流
     router.get('/interaction', function (req, res) {
@@ -111,15 +111,6 @@ module.exports = function (app) {
         //        res.render('userManager',{type:req.body.type});
         res.render('userList',{code:0,text:""});
     });
-    //调查列表
-    router.get('/investigateArray', function (req, res){
-        res.render('investigateArray',{code:0,text:""});
-    });
-    //调查内容
-    router.get('/investigate', function (req, res){
-        res.render('investigate',{seq_no:req.query.seq_no});
-    });
-
     //互动交流
     router.get('/communicate', function (req, res) {
         res.render('communicate',{code:0,text:""});

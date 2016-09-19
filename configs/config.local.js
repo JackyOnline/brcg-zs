@@ -19,7 +19,7 @@ module.exports = {
      port: '3306',
      user: 'root',
      password: '',
-     database: 'hsajj_c',
+     database: 'brcg',
      charset: 'utf8'
     },
 

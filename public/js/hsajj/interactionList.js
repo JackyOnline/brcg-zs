@@ -61,7 +61,7 @@ $(function() {
                             '<td><select class="sstj1" style="margin:auto;width: 52%;height: 32px;border-radius: 5px;"  data-id="'+data.data[i].seq_no+'">' +
                             '<option>操作</option>' +
                             '<option class="cz_fb" value="1">回复</option>' +
-                            '<option class="cz_sc" value="2"">删除</option>' +
+                            '<option class="cz_sc" value="2">删除</option>' +
                             '</select></td> ' +
                             '</tr>')
                     }

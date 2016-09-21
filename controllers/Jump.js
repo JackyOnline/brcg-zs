@@ -40,11 +40,6 @@ module.exports = function (app) {
     router.get('/zxly', function (req, res){
         res.render('FrontPage/zxly',{flMenu:req.query.flMenu});
     });
-    //互动交流
-    router.get('/interaction', function (req, res) {
-        res.render('FrontPage/interaction',{slMenu:req.query.slMenu});
-    });
-
     /*********************后台*********************/
 
         //后台登陆页面
@@ -66,7 +61,7 @@ module.exports = function (app) {
         res.render('zxlyAns',{code:0,text:""});
     });
     //用户管理
-    router.get('/userList', function (req, res){
-        res.render('userList',{code:0,text:""});
+    router.get('/gsalPO', function (req, res){
+        res.render('gsalPO',{code:0,text:""});
     });
 };

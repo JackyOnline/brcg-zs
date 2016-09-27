@@ -4,6 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>宁波润琛阁股份有限公司</title>
     <link href="images/css.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #nav{ background-color: rgba(255, 255, 255, 0);}
+        #nav ul{ margin:0 auto; padding:0; list-style:none;background-color: rgba(255, 255, 255, 0); }
+        #nav ul li{ float:center; position:relative;}
+        #nav ul li a{ width:100px; line-height:25px; display:block; background-color: rgba(255, 255, 0, 0); color: #000000; text-decoration:none;}
+        #nav ul li a:hover{ background-color: #522124; color:#FFFFFF;}
+        #nav ul li span{display:none;position:absolute; left:37px; top:25px; background-color: rgb(246, 246, 246);}
+    </style>
 </head>
 <body>
 <center>
@@ -38,7 +46,18 @@
                         <td width="16%" align="center" class="style_dh"><a href="index" style="font-weight: bold;">网站首页</a></td>
                         <td width="16%" align="center" class="style_dh"><a href="gywn" style="font-weight: bold;">集团简介</a></td>
                         <td width="16%" align="center" class="style_dh"><a href="gswh" style="font-weight: bold;">集团文化</a></td>
-                        <td width="16%" align="center" class="style_dh"><a href="gsal" style="font-weight: bold;">集团案例</a></td>
+                        <td width="16%" align="center" class="style_dh"><div id="nav">
+                                <ul>
+                                    <li onMouseOver="showElement('menu1')" onMouseOut="hideElement('menu1')"><a style="font-weight: bold;height:58px;line-height: 58px;width: 120px;">集团案例</a>
+                      <span id="menu1" style="margin: 32px auto;z-index: 1000">
+                        <a href="gsal" style="font-weight: bold;">市政工程</a>
+                        <a href="#" style="font-weight: bold;">墙体工程</a>
+                        <a href="#" style="font-weight: bold;">园林工程</a>
+                      </span>
+                                </ul>
+                                </li>
+                            </div>
+                        </td>
                         <td width="16%" align="center" class="style_dh"><a href="lxwm" style="font-weight: bold;">联系我们</a></td>
                         <td width="12%" align="right" class="style_dh"><table width="120"height="58"  border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -54,7 +73,7 @@
             <td>&nbsp;</td>
         </tr>
     </table>
-    <table width="100%" height="840"  border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" height="650"  border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td align="left" valign="top" bgcolor="#FFFFFF"><table width="1002" height="308" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
@@ -73,16 +92,16 @@
                         <td height="50">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td height="50" class="style_or">一、装一网是什么？ <br />
-                            二、装一网对我有什么用？ <br />
-                            三、我如何注册成装一网会员？ <br />
-                            四、我注册完了，为啥前台看不到我的资料？ <br />
-                            五、我忘记了登录的密码该怎么办？ <br />
-                            六、我不会上传图片该怎么办？ <br />
-                            七、我的图片怎么上传不上去？ <br />
-                            八、我上传的图片怎么会变形？ <br />
-                            九、怎么做，宣传效果才好？ <br />
-                            十、点击排行榜是怎么回事，怎么没有我们的名字？ </td>
+                        <td height="50" class="style_or" ;>
+                            <a href="index" style="color:#522124">一、我如何去到主页？</a><br />
+                            <a href="gywn" style="color:#522124">二、润琛阁股份是一家什么样的公司？ </a><br />
+                            <a href="gswh" style="color:#522124">三、润琛阁的公司文化是什么？ </a><br />
+                            <a href="lxwm" style="color:#522124">四、我如何联系你们？ </a><br />
+                            <a href="zxly" style="color:#522124">五、我如何在线留言咨询？ </a><br />
+                            <a href="gsal" style="color:#522124">六、我如何看到你们的市政工程案例？ </a><br />
+                            <a href="#" style="color:#522124">七、我如何看到你们的墙体工程案例？ </a><br />
+                            <a href="#" style="color:#522124">八、我如何看到你们的园林工程案例？ </a><br />
+                        </td>
                     </tr>
                 </table></td>
         </tr>
@@ -133,5 +152,13 @@
                 alert("加入收藏失败，请使用Ctrl+D进行添加");
             }
         }
+    }
+    function showElement(elementId)
+    {
+        document.getElementById(elementId).style.display="block";
+    }
+    function hideElement(elementId)
+    {
+        document.getElementById(elementId).style.display="none";
     }
 </script>

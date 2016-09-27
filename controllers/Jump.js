@@ -47,20 +47,20 @@ module.exports = function (app) {
         res.render('login',{code:0,text:""});
     });
     //登录
-    router.get('/index', function (req, res) {
-        var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
-        var Stamp = new Date();
-        var user = {};
-        user.name = "系统管理员";
-        user.mm_dd = (Stamp.getMonth() + 1) +"月"+Stamp.getDate()+ "日";
-        user.Week = dayNames[Stamp.getDay()];
-        res.render('index',user);
-    });
+    //router.get('/index', function (req, res) {
+    //    var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+    //    var Stamp = new Date();
+    //    var user = {};
+    //    user.name = "系统管理员";
+    //    user.mm_dd = (Stamp.getMonth() + 1) +"月"+Stamp.getDate()+ "日";
+    //    user.Week = dayNames[Stamp.getDay()];
+    //    res.render('index',user);
+    //});
     //留言回复
     router.get('/zxlyAns', function (req, res){
         res.render('zxlyAns',{code:0,text:""});
     });
-    //用户管理
+    //集团案例
     router.get('/gsalPO', function (req, res){
         res.render('gsalPO',{code:0,text:""});
     });

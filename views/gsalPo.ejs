@@ -9,8 +9,14 @@
   <script type="text/javascript" src="js/jquery.validate.min.js"></script>
   <script type="text/javascript" src="js/messages_zh.min.js"></script>
   <script type="text/javascript" src="js/hDate.js"></script>
+  <!-- 上传图片js -->
+  <script type="text/javascript" src="/js/uploadify/jquery.uploadify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/js/uploadify/uploadify.css" />
+  <script type="text/javascript" src="/js/uploadify/upload-nuode.js"></script>
+  <style>
+  </style>
 </head>
-<body>
+<body id="gsalPo_gage">
 <center>
 <table width="100%" height="30" border="0" align="center" cellpadding="0" cellspacing="0" background="images/top_1.jpg">
   <tr>
@@ -46,113 +52,88 @@
     </table></td>
   </tr>
 </table>
-<table width="100%" height="1240"  border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="left" valign="top" bgcolor="#FFFFFF"><table width="1002" height="208" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="50%" height="50">&nbsp;</td>
-        </tr>
-      <tr>
-        <td height="58" align="center"><a href="#"><img src="images/gsal_lm.jpg" width="213" height="94" border="0" /></a></td>
-      </tr>
-      <tr>
-        <td height="50">&nbsp;</td>
-      </tr>
-      <tr></tr>
-      </table>
-      <table width="1002" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="33%" height="310"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-        </tr>
-      </table>
-      <table width="1002" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="33%" height="310"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-        </tr>
-      </table>
-      <table width="1002" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="33%" height="310"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-          <td width="33%"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center"><img src="images/pic.jpg" width="318" height="237" /></td>
-            </tr>
-            <tr>
-              <td height="50" align="center" class="content">中央学府-300M<sup>2</sup>-欧式风格</td>
-            </tr>
-          </table></td>
-        </tr>
-      </table>
-      <table height="70" cellspacing="0" cellpadding="0" width="98%" border="0">
-        <tbody>
+  <table width="100%" height="600"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="left" valign="top" bgcolor="#FFFFFF">
+        <table width="1002" height="208" border="0" align="left" cellpadding="0" cellspacing="0">
           <tr>
-            <td class="content" align="center" width="86%" height="22">首页 上一页 下一页 尾页 共1页 1条记录</td>
+            <td width="50%" height="5">&nbsp;</td>
           </tr>
-        </tbody>
-      </table></td>
-  </tr>
-</table>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">名&nbsp;&nbsp;称:</td>
+            <td><input type="text" name="chengHu" style="width:50%;height:34px;font-size:22px;" id="name_text"></td>
+          </tr>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">房屋面积:</td>
+            <td><input type="text" name="chengHu" style="width:50%;height:34px;font-size:22px;" id="area_text"></td>
+          </tr>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">户&nbsp;&nbsp;型:</td>
+            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="houseType_text"></td>
+          </tr>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">风&nbsp;&nbsp;格:</td>
+            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="style_text"></td>
+          </tr>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">装修方式:</td>
+            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="way_text"></td>
+          </tr>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">预算报价:</td>
+            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="price_text"></td>
+          </tr>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">施工单位:</td>
+            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="unit_text"></td>
+          </tr>
+          <tr>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">上传图片:</td>
+            <td class="msg text-gray-lighter font-12 mt-0-5">（主图1张）
+              <div class="w-70 ml-9 float-none clearfix">
+                <ul class="alert-policy-01 pull-left clearfix" id="img_cover_ul">
+                </ul>
+                <div class="roompic-upload w-12">
+                  <textarea id="img_url" hidden></textarea>
+                  <a id="add_top_img" href="#" class="form-btn-upload"><i class="icon-plus-sign"></i>添加照片</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!--<tr>-->
+            <!--<td align="left" class="style_or" style="padding: 0% 0% 24% 41%;">签约日期:</td>-->
+            <!--<td><textarea cols="30" rows="5" style="height: 260px;width: 100%;font-size:22px;" id="consult_text"></textarea></td>-->
+          <!--</tr>-->
+          <tr>
+            <td align="right" class="style_dh">
+              <table width="82"height="40"  border="0" cellspacing="0" cellpadding="0" style=" margin: 10px -82px 0px 0px;">
+                <tr>
+                  <td align="center" bgcolor="#522124" class="style_dh2" id="save" style="cursor:pointer">发布</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td height="50">&nbsp;</td>
+          </tr>
+        </table>
+        <table width="100%" height="180" border="0" cellspacing="0" cellpadding="0" background="images/bot.jpg">
+          <tr>
+            <td align="center" bgcolor="#262626" class="style_bot"><table width="1002" height="180" border="0" cellspacing="0" cellpadding="0" >
+                <tr>
+                  <td height="20" colspan="2"></td>
+                </tr>
+                <tr>
+                  <td width="754" align="left" valign="top"><img src="images/lxwm.png" width="380" height="125" /></td>
+                  <td height="80" align="left" valign="top" class="style_dh2" style="padding: 59px 0px 0px 14px;">Copyright &copy; 2016 All Rights Reserved <br />
+                    波润琛阁装饰有限公司  版权所有</td>
+                </tr>
+              </table></td>
+          </tr>
+        </table>
 </center>
 </body>
 </html>
+<!--私有js-->
+<script src="js/brcg/gsalPo.js"></script>
+

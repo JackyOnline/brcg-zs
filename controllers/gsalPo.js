@@ -28,15 +28,15 @@ module.exports = function (app) {
     //登录验证
     router.post('/gsalPo/select', function (req, res, next) {
         var pro = req.body;
-        var sql = knex('case_show');
-        sql.then(function (reply) {
-            if (pro.name == 'admin' && pro.password == 'rcg188') {
-                res.json({data: '1'})
-            } else {
-                res.json({data: '错误'})
-            }
-        }).catch(function (err) {
-            next(err);
-        });
+        if (pro.name == 'asd' && pro.password == 'asd') {
+            req.session.user_id = pro.name;
+            res.redirect("/zxlyAns");
+        } else {
+            res.json({data: '错误'})
+        }
     });
+
+    //req.session.destroy()
+
+
 };

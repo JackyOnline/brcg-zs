@@ -6,16 +6,19 @@ $(function () {
 
     $p_id.find("#save").on('click',function(){
             debugger;
-
+        if($p_id.find("#name_text").val()==''){
+            alert("请输入案例名称！")
+        }else if($p_id.find("#area_text").val()==''){
+            alert("请输入案例介绍！")
+        }else if($p_id.find("#img_url").val()==''){
+            alert("请插入图片！")
+        }else{
             var data = {
                 name: $p_id.find("#name_text").val(),
                 area: $p_id.find("#area_text").val(),
-                houseType: $p_id.find("#houseType_text").val(),
-                style: $p_id.find("#style_text").val(),
-                way: $p_id.find("#way_text").val(),
-                price: $p_id.find("#price_text").val(),
-                unit: $p_id.find("#unit_text").val(),
+                houseType : $p_id.find('input:radio:checked').val(),
                 img_url:$p_id.find("#img_url").val(),
+                state:1,
             };
             $.ajax({
                 type: "post",
@@ -24,13 +27,15 @@ $(function () {
                 data: data,
                 success: function (data) {
                     debugger;
-                        alert("提交成功！");
-                        window.location.reload();
+                    alert("提交成功！");
+                    window.location.reload();
                 },
                 error: function (data) {
                     alert("系统错误");
                 }
             })
+        }
+
     });
 
 

@@ -52,44 +52,32 @@
     </table></td>
   </tr>
 </table>
-  <table width="100%" height="600"  border="0" cellspacing="0" cellpadding="0">
+  <table width="100%" height="650"  border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td align="left" valign="top" bgcolor="#FFFFFF">
-        <table width="1002" height="208" border="0" align="left" cellpadding="0" cellspacing="0">
+        <table width="1002" height="300" border="0" align="left" cellpadding="0" cellspacing="0">
           <tr>
-            <td width="50%" height="5">&nbsp;</td>
+            <td width="50%" height="50">&nbsp;</td>
           </tr>
           <tr>
-            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">名&nbsp;&nbsp;称:</td>
-            <td><input type="text" name="chengHu" style="width:50%;height:34px;font-size:22px;" id="name_text"></td>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">标&nbsp;&nbsp;题:</td>
+            <td><input type="text" name="chengHu" style="width:70%;height:34px;font-size:22px;" id="name_text"></td>
           </tr>
           <tr>
-            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">房屋面积:</td>
-            <td><input type="text" name="chengHu" style="width:50%;height:34px;font-size:22px;" id="area_text"></td>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">介&nbsp;&nbsp;绍:</td>
+            <td><textarea cols="30" rows="5" style="height: 200px;width: 70%;font-size:22px;" id="area_text"></textarea></td>
           </tr>
           <tr>
-            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">户&nbsp;&nbsp;型:</td>
-            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="houseType_text"></td>
-          </tr>
-          <tr>
-            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">风&nbsp;&nbsp;格:</td>
-            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="style_text"></td>
-          </tr>
-          <tr>
-            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">装修方式:</td>
-            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="way_text"></td>
-          </tr>
-          <tr>
-            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">预算报价:</td>
-            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="price_text"></td>
-          </tr>
-          <tr>
-            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">施工单位:</td>
-            <td><input type="text" name="lianXi" style="width:50%;height:34px;font-size:22px;" id="unit_text"></td>
+            <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;" >所&nbsp;&nbsp;属：</td>
+            <td style="color:black" class="style_or">
+              <input type="radio" name="houseType" value="1" checked>市政工程
+              <input type="radio" name="houseType" value="2">墙体工程
+              <input type="radio" name="houseType" value="3">园林工程
+            </td>
           </tr>
           <tr>
             <td align="left" class="style_or" style="padding: 0% 0% 1% 41%;">上传图片:</td>
-            <td class="msg text-gray-lighter font-12 mt-0-5">（主图1张）
+            <td class="msg text-gray-lighter font-12 mt-0-5">（可上传多张，第一张默认为主图）
               <div class="w-70 ml-9 float-none clearfix">
                 <ul class="alert-policy-01 pull-left clearfix" id="img_cover_ul">
                 </ul>

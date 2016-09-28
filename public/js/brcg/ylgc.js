@@ -3,7 +3,7 @@
  */
 $(function() {
     debugger;
-    var $p_id = $("#gsal_page");
+    var $p_id = $("#ylgc_page");
     $.ajaxSetup({cache:false});
     var notice_num = 0;
     var notice_page = 0;
@@ -22,7 +22,7 @@ $(function() {
     function init(recordStart){
         $.ajax({
             type: "get",
-            url: "/gsal/list?recordStart="+recordStart,
+            url: "/ylgc/list?recordStart="+recordStart,
             dataType: "json",
             data: {},
             success: function (data) {
@@ -51,7 +51,7 @@ $(function() {
                         //查看详情
                         $.ajax({
                             type: "get",
-                            url: "/gsal/get?seq_no="+seq_no,
+                            url: "/ylgc/get?seq_no="+seq_no,
                             dataType: "json",
                             data: {},
                             success: function (data) {

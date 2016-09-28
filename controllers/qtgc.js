@@ -11,10 +11,10 @@ module.exports = function (app) {
 
 
     //获取案例列表
-    router.get('/gsal/list', function (req, res, next) {
+    router.get('/qtgc/list', function (req, res, next) {
         var inter = req.query;
         var totlsize ;
-        var sql = knex.select('*').from('case_show').where('houseType',1);
+        var sql = knex.select('*').from('case_show').where('houseType',2);
         // 执行sql
         sql.then(function (reply) {
             totlsize = reply.length;
@@ -31,7 +31,7 @@ module.exports = function (app) {
     });
 
     //获取案例详情
-    router.get('/gsal/get', function (req, res, next) {
+    router.get('/qtgc/get', function (req, res, next) {
         var seq_no = req.query.seq_no;
         var sql = knex.select('*').from('case_show').where('seq_no',seq_no);
         // 执行sql

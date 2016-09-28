@@ -7,12 +7,15 @@ var Promise = require("bluebird");
 var knex = require('../lib/common/mysqlClient').knex;
 var BusinessError = require('../lib/common/errors/businessError');
 var util = require('../lib/util.js');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var filter = require('../lib/filter');
 module.exports = function (app) {
     app.use('/', router);
 
 
     /*********************前端*********************/
-    //主页
+        //主页
     router.get('/index', function (req, res){
         res.render('FrontPage/index',{seq_no:req.query.seq_no});
     });
@@ -23,6 +26,14 @@ module.exports = function (app) {
     //公司案例
     router.get('/gsal', function (req, res){
         res.render('FrontPage/gsal',{code:0,text:""});
+    });
+    //墙体工程
+    router.get('/qtgc', function (req, res){
+        res.render('FrontPage/qtgc',{code:0,text:""});
+    });
+    //园林工程
+    router.get('/ylgc', function (req, res){
+        res.render('FrontPage/ylgc',{code:0,text:""});
     });
     //公司文化
     router.get('/gswh', function (req, res){
@@ -57,11 +68,13 @@ module.exports = function (app) {
     //    res.render('index',user);
     //});
     //留言回复
-    router.get('/zxlyAns', function (req, res){
+    router.get('/zxlyAns',filter.authorize, function (req, res){
         res.render('zxlyAns',{code:0,text:""});
     });
     //集团案例
-    router.get('/gsalPO', function (req, res){
+    router.get('/gsalPO',filter.authorize, function (req, res){
         res.render('gsalPO',{code:0,text:""});
     });
+
+
 };
